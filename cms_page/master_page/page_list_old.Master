@@ -1,0 +1,42 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="page_list.Master.cs" Inherits="FriendsTravel.master_page.page_list_old" %>
+
+<!DOCTYPE html>
+
+<html lang="th">
+<head runat="server">
+    <meta charset="UTF-8">
+    <title>FriendsTravel</title>
+    
+    <%--jquery--%>
+    <script src="../project_theme/jquery.min.js"></script>
+
+    <%--bootstrap--%>
+    <link href="../project_theme/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <script src="../project_theme/bootstrap/bootstrap.min.js"></script>
+    <script src="../project_theme/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../project_theme/bootstrap/popper.min.js"></script>
+
+    <%--custom--%>
+    <link href="../project_theme/custom/custom_style.css" rel="stylesheet">
+    <script src="../project_theme/custom/custom_jquery.js"></script>
+    
+    <%--highcharts--%>
+    <script src="../project_theme/highcharts/highmaps.js"></script>
+    <script src="../project_theme/highcharts/exporting.js"></script>
+
+    <%--select2--%>
+    <link href="../project_theme/select2/select2.min.css" rel="stylesheet" />
+    <script src="../project_theme/select2/select2.min.js"></script>
+
+    <asp:ContentPlaceHolder ID="MainContentHead" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="container" >
+            <asp:ContentPlaceHolder ID="MainContentBody" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
