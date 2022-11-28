@@ -67,7 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ExperienceRecord\HtmlPage1.html" />
+    <Content Include="ExperienceRecord\Translate.html" />
     <Content Include="ExperienceRecord\show_graph.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="home\demo.aspx" />
