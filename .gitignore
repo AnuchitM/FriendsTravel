@@ -89,6 +89,8 @@ ipch/
 *.sap
 
 #File build cms_page
+cms_page/bin
+cms_page/bin/*.dll
 cms_page/bin/cms_class_library.dll
 cms_page/bin/cms_class_library.pdb
 cms_page/bin/cms_page.dll
