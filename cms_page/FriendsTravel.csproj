@@ -2335,6 +2335,12 @@
   <ItemGroup>
     <Folder Include="master_data\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\cms_library\cms_library.csproj">
+      <Project>{058d7ccf-3741-4e83-8605-f07bf586b454}</Project>
+      <Name>cms_library</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

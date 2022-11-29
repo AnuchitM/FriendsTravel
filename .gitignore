@@ -11,6 +11,7 @@ cms_page/obj/*
 cms_library/obj/*
 cms_library/bin/*
 
+cms_page/FriendsTravel.csproj.user
 
 # old version
 # # User-specific files
