@@ -28,6 +28,26 @@ var Toast = Swal.mixin({
     //    }
     //});
 
+
+
+
+function alertConfirmRemove(callback) {
+    Swal.fire({
+        title: 'Do you want to remove this item?',
+        icon: 'question',
+        showDenyButton: true,
+        confirmButtonText: 'Yes',
+        denyButtonText: 'No',
+        customClass: {
+            actions: 'my-actions',
+            confirmButton: 'order-2',
+            denyButton: 'order-3',
+        }
+    }).then((confirmed) => {
+        callback(confirmed && confirmed.value == true);
+    });
+}
+
 function alertConfrim(message, callback) {
         Swal.fire({
             title: message,
