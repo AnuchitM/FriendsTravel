@@ -10,6 +10,7 @@ cms_page/bin/*
 cms_page/obj/*
 cms_library/obj/*
 cms_library/bin/*
+packages/*
 
 cms_page/FriendsTravel.csproj.user
 

@@ -11,7 +11,7 @@ namespace FriendsTravel.home
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Response.Redirect("../ExperienceRecord/show_graph.aspx");
         }
     }
 }
