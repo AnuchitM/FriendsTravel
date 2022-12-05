@@ -57,7 +57,6 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
@@ -67,11 +66,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ExperienceRecord\show_graph_js.aspx" />
     <Content Include="ExperienceRecord\Translate.html" />
     <Content Include="ExperienceRecord\show_graph.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="home\demo.aspx" />
     <Content Include="home\index.aspx" />
+    <Content Include="info\errorInfo.html" />
     <Content Include="project_theme\AdminLTE-3.2.0\build\config\.eslintrc.json" />
     <Content Include="project_theme\AdminLTE-3.2.0\build\config\postcss.config.js" />
     <Content Include="project_theme\AdminLTE-3.2.0\build\config\rollup.config.js" />
@@ -2259,6 +2260,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExperienceRecord\show_graph_js.aspx.cs">
+      <DependentUpon>show_graph_js.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExperienceRecord\show_graph_js.aspx.designer.cs">
+      <DependentUpon>show_graph_js.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ExperienceRecord\show_graph.aspx.cs">
       <DependentUpon>show_graph.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

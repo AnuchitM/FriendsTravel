@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/master_page/page_list.Master" AutoEventWireup="true" CodeBehind="show_graph.aspx.cs" Inherits="FriendsTravel.ExperienceRecord.show_graph" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/master_page/page_list.Master" AutoEventWireup="true" CodeBehind="show_graph_js.aspx.cs" Inherits="FriendsTravel.ExperienceRecord.show_graph_js" %>
 
 <asp:Content ID="ContentHead" ContentPlaceHolderID="MainContentHead" runat="server">
 
@@ -30,11 +30,8 @@
                     <input id="txtActivity" type="text" class="form-control" maxlength="250" />
                 </div>
                 <div class="col-md-12 col-lg-4">
-                    <label for="ddlProvince_Old">Province : </label>
-                    
-                    <asp:DropDownList ID="ddlProvince" CssClass="form-control select2" runat="server" >
-                    </asp:DropDownList>
-                    <select id="ddlProvince_Old" class="form-control" hidden ></select>
+                    <label for="ddlProvince">Province : </label>
+                    <select id="ddlProvince" class="form-control select2 "></select>
                 </div>
                 <div class="col-md-12 col-lg-4">
                     <label for="txtPeople">Number (People) : </label>
@@ -109,7 +106,7 @@
                 if (VerifyRequireField(txtPeople)) { flagAlert = true; }
                 if (VerifyRequireField(txtDetail)) { flagAlert = true; }
 
-                if (VerifyRequireFieldSelect2(MainContentBody_ddlProvince)) { flagAlert = true; }
+                if (VerifyRequireFieldSelect2(ddlProvince)) { flagAlert = true; }
 
             }
             if (flagAlert) {
@@ -128,7 +125,7 @@
             $('#txtActivity').val('');
             $('#txtPeople').val('');
             $('#txtDetail').val('');
-            setDropdown('../json/province.json', 'ddlProvince_Old', 'name', 'key', true);
+            setDropdown('../json/province.json', 'ddlProvince', 'name', 'key', true);
         }
 
 
@@ -162,8 +159,8 @@
             var strActivity = $('#txtActivity').val();
             var strPeople = $('#txtPeople').val();
             var strDetail = $('#txtDetail').val();
-            var strProvince = $('#select2-ddlProvince_Old-container').text()
-            var strprovinceCode = $('#ddlProvince_Old').val();
+            var strProvince = $('#select2-ddlProvince-container').text()
+            var strprovinceCode = $('#ddlProvince').val();
             strProvince = strprovinceCode == '' ? '' : strProvince;
 
             var indexDataGraph = -99;
