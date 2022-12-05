@@ -12,12 +12,11 @@
             margin: 0 auto;
             border: 1px solid #4f4f4f;
         }
+
         .header {
             position: sticky !important;
-            top:0 !important;
+            top: 0 !important;
         }
-
-
     </style>
     <!-- DataTables -->
     <link rel="stylesheet" href="../project_theme/AdminLTE-3.2.0/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
@@ -50,14 +49,15 @@
     <div class="card card-default">
         <div class="card-body">
             <div class="col-md-12 col-lg-4 pb-2">
+                <label for="fileUpload">Sheet Name : </label>
                 <asp:DropDownList ID="ddlSheet" CssClass="form-control select2" runat="server" OnSelectedIndexChanged="ddlSheet_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
             </div>
-            <div class="col-md-12 col-lg-12" style="overflow: auto;max-height:600px">
+            <div class="col-md-12 col-lg-12" style="overflow: auto; max-height: 600px">
                 <asp:UpdatePanel ID="UpdatePanel_List" runat="server">
                     <ContentTemplate>
                         <asp:Label ID="lblTotal" runat="server" Text="0" Visible="false"></asp:Label>
                         <table id="tbData" class="table table-bordered table-hover">
-                            <thead style="position: sticky;top: 0;background:#fff;">
+                            <thead style="position: sticky; top: 0; background: #fff;">
                                 <tr>
                                     <asp:Repeater ID="rptHead" runat="server">
                                         <ItemTemplate>
