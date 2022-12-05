@@ -8,6 +8,7 @@
 #File build cms_page
 cms_page/bin/*
 cms_page/obj/*
+cms_page/upload/execl/*
 cms_library/obj/*
 cms_library/bin/*
 packages/*
