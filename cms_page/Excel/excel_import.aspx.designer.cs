@@ -42,6 +42,15 @@ namespace FriendsTravel.Execl
         protected global::System.Web.UI.WebControls.LinkButton btnRead;
 
         /// <summary>
+        /// btnExport control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnExport;
+
+        /// <summary>
         /// ddlSheet control.
         /// </summary>
         /// <remarks>

@@ -38,9 +38,10 @@
                 </div>
             </div>
             <div class="row pt-2">
-                <div class="col-md-12 col-lg-4" style="align-self: self-end;">
+                <div class="col-md-12 col-lg-12" style="align-self: self-end;">
                     <asp:LinkButton runat="server" ID="btnRead" type="button" OnClientClick="return checkFile()" OnClick="Read_exccl" value="Read" class="btn btn-success pr-4 pl-4" Text="Upload"></asp:LinkButton>
                     <a href="../upload/template/template_upload.xlsx" class="btn btn-info">Download Template</a>
+                    <asp:LinkButton runat="server" ID="btnExport" type="button" OnClick="btnExport_Click" OnClientClick="return checkData()" value="Read" class="btn btn-primary pr-4 pl-4" Text="Export"></asp:LinkButton>
                 </div>
             </div>
         </div>
@@ -99,6 +100,15 @@
                 return true;
             } else {
                 alertError('กรุณาเลือกไฟล์ที่อัพโหลด !!!');
+                return false;
+            }
+        }
+
+        function checkData() {
+            if ($('#MainContentBody_lblUpload').text() != '') {
+                return true;
+            } else {
+                alertError('ไม่มีข้อมูล !!!');
                 return false;
             }
         }

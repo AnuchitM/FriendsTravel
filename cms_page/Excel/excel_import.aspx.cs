@@ -128,6 +128,7 @@ namespace FriendsTravel.Execl
 
             if (dtData.Rows.Count > 0)
             {
+                ViewState["dtData"] = dtData;
                 lblTotal.Text = dtData.Rows.Count.ToString();
                 rptRow.DataSource = dtData;
                 rptRow.DataBind();
@@ -136,6 +137,7 @@ namespace FriendsTravel.Execl
             }
             else
             {
+                ViewState["dtData"] = null;
                 rptRow.DataSource = null;
                 rptRow.DataBind();
             }
@@ -166,6 +168,43 @@ namespace FriendsTravel.Execl
         protected void ddlSheet_SelectedIndexChanged(object sender, EventArgs e)
         {
             loadData();
+        }
+
+        protected void btnExport_Click(object sender, EventArgs e)
+        {
+            DataTable dt = (DataTable)ViewState["dtData"];
+            if (dt != null && dt.Rows.Count > 0)
+            {
+                var wb = new XLWorkbook();
+                var ws = wb.Worksheets.Add(dt.TableName);
+
+                ws.FirstCell().InsertTable(dt, false);
+                ws.Row(1).Style.Font.Bold = true;
+                ws.Row(1).AdjustToContents();
+                var firstCell = ws.FirstCellUsed();
+                var lastCell = ws.LastCellUsed();
+                var range = ws.Range(firstCell.Address, lastCell.Address);
+                range.Style.Border.BottomBorder = XLBorderStyleValues.Thin;
+                range.Style.Border.LeftBorder = XLBorderStyleValues.Thin;
+                range.Style.Border.TopBorder = XLBorderStyleValues.Thin;
+                range.Style.Border.RightBorder = XLBorderStyleValues.Thin;
+
+                Response.Clear();
+                Response.Buffer = true;
+                Response.Charset = "";
+
+                Response.ContentType = "application/ms-excel";
+                string excelFileName = "export_" + DateTime.Now.ToString(@"yyyyMMdd-HHMM");
+                Response.AddHeader("content-disposition", string.Format("attachment; filename=\"{0}.xlsx\"", excelFileName));
+
+                using (MemoryStream MyMemoryStream = new MemoryStream())
+                {
+                    wb.SaveAs(MyMemoryStream);
+                    MyMemoryStream.WriteTo(Response.OutputStream);
+                    Response.Flush();
+                    Response.End();
+                }
+            }
         }
     }
 }
